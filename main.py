@@ -35,9 +35,9 @@ maleRateArray = np.array([maleRates])
 femaleRateArray = np.array([femaleRates])
 
 #Graph parameters to plot 'Male vs Female Suicide Rate Comparison'
-plt.figure(figsize=(10,5)) #Taller and narrower graph as there's only 2 columns
-plt.plot(['Male'], maleRateArray, label='Male')# X= 'Male' and Y = 'maleRateArray
-plt.plot(['Female'], femaleRateArray, label='Female')# X= 'Female' and Y = femaleRateArray
+plt.figure(figsize=(5,8)) #Taller and narrower graph as there's only 2 columns
+plt.bar(['Male'], maleRateArray, label='Male') # X= 'Male' and Y = 'maleRateArray
+plt.bar(['Female'], femaleRateArray, label='Female') # X= 'Female' and Y = 'femaleRateArray'
 
 plt.xlabel('Gender')
 plt.ylabel('Suicide Rates')
@@ -47,7 +47,7 @@ plt.legend()
 #Save 'Male vs Female Suicide Rate Comparison' chart.
 maleFemaleRate = "charts/maleFemaleRate.png"
 plt.savefig(maleFemaleRate)
-plt.show(maleFemaleRate)
+plt.show()
 
 #(10/10 points) I will be checking out the master branch of your project. Please be sure to include a requirements.txt file which contains all the packages that need installed. You can create this fille with the output of pip freeze at the terminal prompt.
 #(20/20 points) There should be a README.md file in your project that explains what your project is, how to install the pip requirements, and how to execute the program. Please use the GitHub flavor of Markdown. Be thorough on the explanations.
