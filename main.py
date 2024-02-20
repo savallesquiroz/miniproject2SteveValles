@@ -7,6 +7,12 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from pathlib import Path
+#Create 'charts' folder.
+try:
+    Path("charts").mkdir()
+except FileExistsError:
+    pass
 #(20/20 points) Using a data source of your choice, such as data from data.gov or using the Faker package, generate or retrieve some data for creating basic statistics on. This will generally come in as json data, etc.
    #"What was world suicide rate in 2023 for males and females?"
    #"How does suicide rates differ from Spain to USA?"
@@ -39,8 +45,9 @@ plt.title('Male vs Female Suicide Rate Comparison')
 plt.legend()
 #(10/10 points) Save these graphs in a folder called charts as PNG files. Do not upload these to your project folder, the project should save these when it executes. You may want to add this folder to your .gitignore file.
 #Save 'Male vs Female Suicide Rate Comparison' chart.
-maleFemaleRates = "charts/maleFemaleRates.png"
-plt.savefig(maleFemaleRates)
+maleFemaleRate = "charts/maleFemaleRate.png"
+plt.savefig(maleFemaleRate)
+plt.show(maleFemaleRate)
 
 #(10/10 points) I will be checking out the master branch of your project. Please be sure to include a requirements.txt file which contains all the packages that need installed. You can create this fille with the output of pip freeze at the terminal prompt.
 #(20/20 points) There should be a README.md file in your project that explains what your project is, how to install the pip requirements, and how to execute the program. Please use the GitHub flavor of Markdown. Be thorough on the explanations.
