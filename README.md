@@ -61,7 +61,7 @@ This project is licensed under the [NAME HERE] License - see the LICENSE.md file
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
-* []()
+* [kaggle.com](https://www.kaggle.com/datasets/armanzhalgasbayev/world-countries-rankings-by-suicide-rate-2023)
 * []()
 * []()
 * []()
