@@ -30,12 +30,6 @@ highest or lowest rates and changes of suicide labing each country.
 * python main.py
 ```
 
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
 
 ## Authors
 
@@ -56,4 +50,4 @@ Inspiration, code snippets, etc.
 * [kaggle.com](https://www.kaggle.com/datasets/armanzhalgasbayev/world-countries-rankings-by-suicide-rate-2023)
 * [matplotlib](https://matplotlib.org/stable/tutorials/pyplot.html)
 * [numpy.org](https://numpy.org/doc/stable/user/c-info.html)
-* []()
+* [pandas.pydata.org](https://pandas.pydata.org/pandas-docs/stable/getting_started/overview.html)
