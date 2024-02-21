@@ -8,6 +8,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
+
+from pandas import DataFrame
+
 #Create 'charts' folder.
 try:
     Path("charts").mkdir()
@@ -19,6 +22,7 @@ except FileExistsError:
    #"3.Which were top 5 countries with higher suicide rates?"
    #"4.Which were top 5 countries with lowest change%?"
    #"5.Which were top 5 countries with highest change%?"
+
 #(10/10 points) Store this information in Pandas dataframe. These should be 2D data as a dataframe, meaning the data is labeled tabular data.
 rates = pd.read_csv('world_suicide_rate_2023.csv', index_col='Country')
 data = pd.read_csv('world_suicide_rate_2023.csv')
@@ -26,14 +30,24 @@ data = pd.read_csv('world_suicide_rate_2023.csv')
 
 #1. Store world rates from 'World' row
 worldRates = rates.loc['World']
+
 #1. Store suicide rates of 'Male' and 'Female'
 maleRates = worldRates['Male']
 femaleRates = worldRates['Female']
-#2. Store sorted data by top 5 lowest suicide rates
-lowRateTop5 = data.nsmallest(5, 'All')
+
 #1. Store female and male rates in a numpy array.
 maleRateArray = np.array([maleRates])
 femaleRateArray = np.array([femaleRates])
+
+#2. Store sorted data by top 5 lowest suicide rates
+lowRateTop5 = data.nsmallest(5, 'All')
+
+#3. Store sorted data by top 5 higher suicide rates
+highRateTop5 = data.nlargest(5, 'All')
+
+#4. Store sorted data by top 5 lowest suicide change%
+lowChangeTop5 = data.nsmallest(5, 'Change%')
+
 #1. Graph parameters to plot 'Male vs Female Suicide Rate Comparison'
 plt.figure(figsize=(5,8)) #Taller and narrower graph as there's only 2 columns
 plt.bar(['Male'], maleRateArray, label='Male') # X= 'Male' and Y = 'maleRateArray
@@ -43,20 +57,45 @@ plt.xlabel('Gender')
 plt.ylabel('Suicide Rates')
 plt.title('Male vs Female Suicide Rate Comparison')
 plt.legend()
-
+#1. Save graph
 maleFemaleRate = "charts/maleFemaleRate.png"
 plt.savefig(maleFemaleRate)
 plt.show()
+
 #2. Graph parameters to plot 'top 5 countries with lower suicide rates'
-plt.figure(figsize=(10,5))
+plt.figure(figsize=(12,5))
 plt.bar(lowRateTop5['Country'], lowRateTop5['All']) #X and Y
 
 plt.xlabel('Country')
 plt.ylabel('Suicide Rate')
 plt.title('Top 5 Countries with Lower Suicide Rates')
+#2. Save graph
+lowRateTop5Chart = "charts/lowRateTop5.png"
+plt.savefig(lowRateTop5Chart)
+plt.show()
 
-lowRateTop5 = "charts/lowRateTop5.png"
-plt.savefig(lowRateTop5)
+#3. Graph parameters to plot 'top 5 countries with lower suicide rates'
+plt.figure(figsize=(10,5))
+plt.bar(highRateTop5['Country'], highRateTop5['All']) #X and Y
+
+plt.xlabel('Country')
+plt.ylabel('Suicide Rate')
+plt.title('Top 5 Countries with Highest Suicide Rates')
+#3. Save graph
+highRateTop5Chart = "charts/highRateTop5.png"
+plt.savefig(highRateTop5Chart)
+plt.show()
+
+#4. Graph parameters to plot 'top 5 countries with lower suicide rates'
+plt.figure(figsize=(10,5))
+plt.bar(highRateTop5['Country'], highRateTop5['Change%']) #X and Y
+
+plt.xlabel('Country')
+plt.ylabel('Suicide Change')
+plt.title('Top 5 Countries with Best Suicide Change')
+#4. Save graph
+bestChangeTop5Chart = "charts/bestChangeTop5.png"
+plt.savefig(bestChangeTop5Chart)
 plt.show()
 #(10/10 points)Save these graphs in a folder called charts as PNG files. Do not upload these to your project folder, the project should save these when it executes. You may want to add this folder to your .gitignore file.
 
