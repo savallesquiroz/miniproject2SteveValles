@@ -5,31 +5,29 @@
 
 # Mini Project 2
 
-Simple overview of use/purpose.
+This project will be using Pandas and Faker to create dataframes.
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
-
+Storing information from world_suicide_rate to graph data representations of male vs female suicide rates and top 5
+highest or lowest rates and changes of suicide labing each country.
 ## Getting Started
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
-* List pip install instructions.
-
+* Need to download world_suicide_rate_2023.csv file into the main folder
+```
+* pip install -r requirements.txt
+```
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* Download csv file from the following link:
+* * https://www.kaggle.com/datasets/armanzhalgasbayev/world-countries-rankings-by-suicide-rate-2023/download?datasetVersionNumber=1
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
 ```
-code blocks for commands
+* python main.py
 ```
 
 ## Help
@@ -41,27 +39,21 @@ command to run if program contains helper info
 
 ## Authors
 
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+Steve Valles
 
 ## Version History
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
 * 0.1
     * Initial Release
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the [MIT] License - see the LICENSE.md file for details
 
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
 * [kaggle.com](https://www.kaggle.com/datasets/armanzhalgasbayev/world-countries-rankings-by-suicide-rate-2023)
-* []()
-* []()
+* [matplotlib](https://matplotlib.org/stable/tutorials/pyplot.html)
+* [numpy.org](https://numpy.org/doc/stable/user/c-info.html)
 * []()
